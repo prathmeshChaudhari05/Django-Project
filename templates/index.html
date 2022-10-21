@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% csrf_token %} 
+{% block content %}
+<div style="padding-left: 50px;">
+    <h1> Hello {{name}}</h1>
+    <form action="getData" method="post">
+        {%csrf_token%}
+        <input type="text" placeholder="Enter Name" name="name"><br>
+        <input type="text" placeholder="Enter Surname" name="surname"><br><br>
+        <input type="submit">
+    </form>
+
+    Result : {{data}}
+</div>
+    
+
+{% endblock %}
